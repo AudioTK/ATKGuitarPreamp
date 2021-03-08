@@ -1,0 +1,3 @@
+[submodule "ATKJUCEComponents"]
+	path = ATKJUCEComponents
+	url = https://github.com/AudioTK/ATKJUCEComponents.git
