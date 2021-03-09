@@ -33,9 +33,7 @@ ATKGuitarPreampAudioProcessorEditor::ATKGuitarPreampAudioProcessorEditor(ATKGuit
   setSize(900, 200);
 }
 
-ATKGuitarPreampAudioProcessorEditor::~ATKGuitarPreampAudioProcessorEditor()
-{
-}
+ATKGuitarPreampAudioProcessorEditor::~ATKGuitarPreampAudioProcessorEditor() = default;
 
 void ATKGuitarPreampAudioProcessorEditor::paint(Graphics& g)
 {
