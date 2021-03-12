@@ -41,10 +41,10 @@
 #  define JucePlugin_Name "GuitarPreamp"
 #endif
 #ifndef JucePlugin_Desc
-#  define JucePlugin_Desc ""
+#  define JucePlugin_Desc "GuitarPreamp"
 #endif
 #ifndef JucePlugin_Manufacturer
-#  define JucePlugin_Manufacturer "MatthieuBrucher"
+#  define JucePlugin_Manufacturer "Matthieu Brucher"
 #endif
 #ifndef JucePlugin_ManufacturerWebsite
 #  define JucePlugin_ManufacturerWebsite "http://www.audio-tk.com/"
@@ -149,7 +149,7 @@
 #  define JucePlugin_IAASubType JucePlugin_PluginCode
 #endif
 #ifndef JucePlugin_IAAName
-#  define JucePlugin_IAAName "MatthieuBrucher: GuitarPreamp"
+#  define JucePlugin_IAAName "Matthieu Brucher: GuitarPreamp"
 #endif
 #ifndef JucePlugin_VSTNumMidiInputs
 #  define JucePlugin_VSTNumMidiInputs 16

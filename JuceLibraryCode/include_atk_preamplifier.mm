@@ -5,5 +5,4 @@
 
 */
 
-#include "AppConfig.h"
 #include <atk_preamplifier/atk_preamplifier.mm>

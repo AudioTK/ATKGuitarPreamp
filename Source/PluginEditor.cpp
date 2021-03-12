@@ -13,7 +13,7 @@
 
 //==============================================================================
 ATKGuitarPreampAudioProcessorEditor::ATKGuitarPreampAudioProcessorEditor(ATKGuitarPreampAudioProcessor& p,
-    AudioProcessorValueTreeState& paramState)
+    juce::AudioProcessorValueTreeState& paramState)
   : AudioProcessorEditor(&p)
   , processor(p)
   , paramState(paramState)
@@ -35,13 +35,13 @@ ATKGuitarPreampAudioProcessorEditor::ATKGuitarPreampAudioProcessorEditor(ATKGuit
 
 ATKGuitarPreampAudioProcessorEditor::~ATKGuitarPreampAudioProcessorEditor() = default;
 
-void ATKGuitarPreampAudioProcessorEditor::paint(Graphics& g)
+void ATKGuitarPreampAudioProcessorEditor::paint(juce::Graphics& g)
 {
   // (Our component is opaque, so we must completely fill the background with a solid colour)
-  g.fillAll(getLookAndFeel().findColour(ResizableWindow::backgroundColourId));
-  g.setFont(Font("Times New Roman", 30.0f, Font::bold | Font::italic));
-  g.setColour(Colours::whitesmoke);
-  g.drawText("Guitar Preamp", 20, 10, 200, 30, Justification::verticallyCentred);
+  g.fillAll(getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId));
+  g.setFont(juce::Font("Times New Roman", 30.0f, juce::Font::bold | juce::Font::italic));
+  g.setColour(juce::Colours::whitesmoke);
+  g.drawText("Guitar Preamp", 20, 10, 200, 30, juce::Justification::verticallyCentred);
 }
 
 void ATKGuitarPreampAudioProcessorEditor::resized()

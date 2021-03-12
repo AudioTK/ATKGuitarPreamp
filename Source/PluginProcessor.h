@@ -1,31 +1,26 @@
 /*
   ==============================================================================
 
-    This file was auto-generated!
-
-    It contains the basic framework code for a JUCE plugin processor.
+    This file contains the basic framework code for a JUCE plugin processor.
 
   ==============================================================================
 */
 
 #pragma once
 
-#include "JuceHeader.h"
-
 #include <ATK/Core/InPointerFilter.h>
 #include <ATK/Core/OutPointerFilter.h>
-
+#include <ATK/EQ/ButterworthFilter.h>
+#include <ATK/EQ/IIRFilter.h>
+#include <ATK/EQ/ToneStackFilter.h>
+#include <ATK/Preamplifier/DempwolfTriodeFunction.h>
+#include <ATK/Preamplifier/Triode2Filter.h>
 #include <ATK/Tools/DecimationFilter.h>
 #include <ATK/Tools/DryWetFilter.h>
 #include <ATK/Tools/OversamplingFilter.h>
 #include <ATK/Tools/VolumeFilter.h>
-
-#include <ATK/EQ/ButterworthFilter.h>
-#include <ATK/EQ/IIRFilter.h>
-#include <ATK/EQ/ToneStackFilter.h>
-
-#include <ATK/Preamplifier/DempwolfTriodeFunction.h>
-#include <ATK/Preamplifier/Triode2Filter.h>
+#include <JuceHeader.h>
+#include <JucePluginDefines.h>
 
 //==============================================================================
 /**
@@ -36,12 +31,12 @@ static const double minGain = -40;
 static const double originGain = -24;
 static const double maxGain = 40;
 
-class ATKGuitarPreampAudioProcessor: public AudioProcessor
+class ATKGuitarPreampAudioProcessor: public juce::AudioProcessor
 {
 public:
   //==============================================================================
   ATKGuitarPreampAudioProcessor();
-  ~ATKGuitarPreampAudioProcessor();
+  ~ATKGuitarPreampAudioProcessor() override;
 
   //==============================================================================
   void prepareToPlay(double sampleRate, int samplesPerBlock) override;
@@ -51,15 +46,16 @@ public:
   bool isBusesLayoutSupported(const BusesLayout& layouts) const override;
 #endif
 
-  void processBlock(AudioSampleBuffer&, MidiBuffer&) override;
+  void processBlock(juce::AudioSampleBuffer&, juce::MidiBuffer&) override;
 
   //==============================================================================
-  AudioProcessorEditor* createEditor() override;
+  juce::AudioProcessorEditor* createEditor() override;
   bool hasEditor() const override;
 
   //==============================================================================
-  const String getName() const override;
+  const juce::String getName() const override;
 
+  bool isMidiEffect() const override;
   bool acceptsMidi() const override;
   bool producesMidi() const override;
   double getTailLengthSeconds() const override;
@@ -68,11 +64,11 @@ public:
   int getNumPrograms() override;
   int getCurrentProgram() override;
   void setCurrentProgram(int index) override;
-  const String getProgramName(int index) override;
-  void changeProgramName(int index, const String& newName) override;
+  const juce::String getProgramName(int index) override;
+  void changeProgramName(int index, const juce::String& newName) override;
 
   //==============================================================================
-  void getStateInformation(MemoryBlock& destData) override;
+  void getStateInformation(juce::MemoryBlock& destData) override;
   void setStateInformation(const void* data, int sizeInBytes) override;
 
 private:
@@ -90,7 +86,7 @@ private:
   ATK::DryWetFilter<double> dryWetFilter;
   ATK::OutPointerFilter<float> outFilter;
 
-  AudioProcessorValueTreeState parameters;
+  juce::AudioProcessorValueTreeState parameters;
 
   float old_gain;
   float old_bass;

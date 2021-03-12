@@ -1,9 +1,7 @@
 /*
   ==============================================================================
 
-    This file was auto-generated!
-
-    It contains the basic framework code for a JUCE plugin processor.
+    This file contains the basic framework code for a JUCE plugin processor.
 
   ==============================================================================
 */
@@ -15,12 +13,12 @@
 ATKGuitarPreampAudioProcessor::ATKGuitarPreampAudioProcessor()
   :
 #ifndef JucePlugin_PreferredChannelConfigurations
-  AudioProcessor(BusesProperties()
+  juce::AudioProcessor(BusesProperties()
 #  if !JucePlugin_IsMidiEffect
 #    if !JucePlugin_IsSynth
-                     .withInput("Input", AudioChannelSet::stereo(), true)
+                           .withInput("Input", juce::AudioChannelSet::mono(), true)
 #    endif
-                     .withOutput("Output", AudioChannelSet::stereo(), true)
+                           .withOutput("Output", juce::AudioChannelSet::mono(), true)
 #  endif
           )
   ,
@@ -35,7 +33,7 @@ ATKGuitarPreampAudioProcessor::ATKGuitarPreampAudioProcessor()
         juce::Identifier("ATKGuitarPreamp"),
         {std::make_unique<juce::AudioParameterFloat>("gain",
              "Gain",
-             NormalisableRange<float>(minGain, maxGain),
+             juce::NormalisableRange<float>(minGain, maxGain),
              originGain,
              " dB"),
             std::make_unique<juce::AudioParameterFloat>("bass", "Bass", -1.0f, 1.0f, .0f),
@@ -43,12 +41,12 @@ ATKGuitarPreampAudioProcessor::ATKGuitarPreampAudioProcessor()
             std::make_unique<juce::AudioParameterFloat>("high", "High", -1.0f, 1.0f, .0f),
             std::make_unique<juce::AudioParameterFloat>("volume",
                 "Volume",
-                NormalisableRange<float>(minVolume, maxVolume),
+                juce::NormalisableRange<float>(minVolume, maxVolume),
                 (minVolume + maxVolume) / 2,
                 " dB"),
             std::make_unique<juce::AudioParameterFloat>("drywet",
                 "Dry/Wet",
-                NormalisableRange<float>(0.f, 100.f),
+                juce::NormalisableRange<float>(0.f, 100.f),
                 100.f,
                 " dB")})
 
@@ -83,7 +81,7 @@ ATKGuitarPreampAudioProcessor::~ATKGuitarPreampAudioProcessor()
 }
 
 //==============================================================================
-const String ATKGuitarPreampAudioProcessor::getName() const
+const juce::String ATKGuitarPreampAudioProcessor::getName() const
 {
   return JucePlugin_Name;
 }
@@ -100,6 +98,15 @@ bool ATKGuitarPreampAudioProcessor::acceptsMidi() const
 bool ATKGuitarPreampAudioProcessor::producesMidi() const
 {
 #if JucePlugin_ProducesMidiOutput
+  return true;
+#else
+  return false;
+#endif
+}
+
+bool ATKGuitarPreampAudioProcessor::isMidiEffect() const
+{
+#if JucePlugin_IsMidiEffect
   return true;
 #else
   return false;
@@ -126,12 +133,12 @@ void ATKGuitarPreampAudioProcessor::setCurrentProgram(int index)
 {
 }
 
-const String ATKGuitarPreampAudioProcessor::getProgramName(int index)
+const juce::String ATKGuitarPreampAudioProcessor::getProgramName(int index)
 {
   return {};
 }
 
-void ATKGuitarPreampAudioProcessor::changeProgramName(int index, const String& newName)
+void ATKGuitarPreampAudioProcessor::changeProgramName(int index, const juce::String& newName)
 {
 }
 
@@ -172,11 +179,15 @@ void ATKGuitarPreampAudioProcessor::releaseResources()
 bool ATKGuitarPreampAudioProcessor::isBusesLayoutSupported(const BusesLayout& layouts) const
 {
 #  if JucePlugin_IsMidiEffect
-  ignoreUnused(layouts);
+  juce::ignoreUnused(layouts);
   return true;
 #  else
   // This is the place where you check if the layout is supported.
-  if(layouts.getMainOutputChannelSet() != AudioChannelSet::stereo())
+  // In this template code we only support mono or stereo.
+  // Some plugin hosts, such as certain GarageBand versions, will only
+  // load plugins that support stereo bus layouts.
+  if(layouts.getMainOutputChannelSet() != juce::AudioChannelSet::mono()
+      && layouts.getMainOutputChannelSet() != juce::AudioChannelSet::stereo())
     return false;
 
     // This checks if the input layout matches the output layout
@@ -190,7 +201,7 @@ bool ATKGuitarPreampAudioProcessor::isBusesLayoutSupported(const BusesLayout& la
 }
 #endif
 
-void ATKGuitarPreampAudioProcessor::processBlock(AudioSampleBuffer& buffer, MidiBuffer& midiMessages)
+void ATKGuitarPreampAudioProcessor::processBlock(juce::AudioSampleBuffer& buffer, juce::MidiBuffer& midiMessages)
 {
   if(*parameters.getRawParameterValue("gain") != old_gain)
   {
@@ -242,15 +253,15 @@ bool ATKGuitarPreampAudioProcessor::hasEditor() const
   return true; // (change this to false if you choose to not supply an editor)
 }
 
-AudioProcessorEditor* ATKGuitarPreampAudioProcessor::createEditor()
+juce::AudioProcessorEditor* ATKGuitarPreampAudioProcessor::createEditor()
 {
   return new ATKGuitarPreampAudioProcessorEditor(*this, parameters);
 }
 
 //==============================================================================
-void ATKGuitarPreampAudioProcessor::getStateInformation(MemoryBlock& destData)
+void ATKGuitarPreampAudioProcessor::getStateInformation(juce::MemoryBlock& destData)
 {
-  MemoryOutputStream store(destData, true);
+  juce::MemoryOutputStream store(destData, true);
   store.writeInt(0); // version ID
   store.writeFloat(*parameters.getRawParameterValue("gain"));
   store.writeFloat(*parameters.getRawParameterValue("bass"));
@@ -262,7 +273,7 @@ void ATKGuitarPreampAudioProcessor::getStateInformation(MemoryBlock& destData)
 
 void ATKGuitarPreampAudioProcessor::setStateInformation(const void* data, int sizeInBytes)
 {
-  MemoryInputStream store(data, static_cast<size_t>(sizeInBytes), false);
+  juce::MemoryInputStream store(data, static_cast<size_t>(sizeInBytes), false);
   int version = store.readInt(); // version ID
   *parameters.getRawParameterValue("gain") = store.readFloat();
   *parameters.getRawParameterValue("bass") = store.readFloat();
@@ -274,7 +285,7 @@ void ATKGuitarPreampAudioProcessor::setStateInformation(const void* data, int si
 
 //==============================================================================
 // This creates new instances of the plugin..
-AudioProcessor* JUCE_CALLTYPE createPluginFilter()
+juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()
 {
   return new ATKGuitarPreampAudioProcessor();
 }
