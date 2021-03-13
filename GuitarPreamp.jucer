@@ -32,12 +32,12 @@
   </MAINGROUP>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
   <EXPORTFORMATS>
-    <XCODE_MAC targetFolder="Builds/MacOSX" xcodeValidArchs="x86_64">
+    <XCODE_MAC targetFolder="Builds/MacOSX" xcodeValidArchs="arm64,arm64e,x86_64">
       <CONFIGURATIONS>
         <CONFIGURATION isDebug="1" name="Debug" targetName="ATKGuitarPreamp" headerPath="../../../../Plugins/GuitarPreamp&#10;../../../../AudioTK&#10;../../../../AudioTK/3rdParty/gsl/include&#10;../../../../AudioTK/3rdParty/eigen&#10;../../../../../local/boost_1_75_0&#10;../../../../AudioTK-Modeling"/>
         <CONFIGURATION isDebug="0" name="Release" targetName="ATKGuitarPreamp" headerPath="../../../../Plugins/GuitarPreamp&#10;../../../../AudioTK&#10;../../../../AudioTK/3rdParty/gsl/include&#10;../../../../AudioTK/3rdParty/eigen&#10;../../../../../local/boost_1_75_0&#10;../../../../AudioTK-Modeling"
                        codeSigningIdentity="Brucher Matthieu" fastMath="1" stripLocalSymbols="1"
-                       osxSDK="10.15 SDK"/>
+                       osxSDK="11.1 SDK" customXcodeFlags="OTHER_CODE_SIGN_FLAGS= --options=runtime --timestamp"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_audio_basics" path="../../../JUCE/modules"/>
