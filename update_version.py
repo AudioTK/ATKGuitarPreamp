@@ -40,7 +40,7 @@ def main():
 
   print("Updating Mac Installer version info...")
   
-  plistpath = scriptpath + "/installer/ATKGuitarPreamp.pkgproj"
+  plistpath = scriptpath + "/installer/GuitarPreamp.pkgproj"
   installer = plistlib.readPlist(plistpath)
   
   for x in installer['PACKAGES']:
