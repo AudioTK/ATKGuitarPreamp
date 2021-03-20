@@ -25,7 +25,7 @@ Name: "manual"; Description: "User guide"; Types: full custom; Flags: fixed
 [Files]
 Source: "..\Builds\VisualStudio2019_32\Win32\Release\VST3\ATKGuitarPreamp.vst3"; DestDir: "{cf}\VST3\"; Check: not Is64BitInstallMode; Components:vst3_32; Flags: ignoreversion;
 Source: "..\Builds\VisualStudio2019_32\Win32\Release\VST3\ATKGuitarPreamp.vst3"; DestDir: "{cf32}\VST3\"; Check: Is64BitInstallMode; Components:vst3_32; Flags: ignoreversion;
-Source: "..\Builds\VisualStudio2019\x64\Release\VST3\ATKGuitarPreamp x64.vst3"; DestDir: "{cf64}\VST3\"; Check: Is64BitInstallMode; Components:vst3_64; Flags: ignoreversion;
+Source: "..\Builds\VisualStudio2019\x64\Release\VST3\ATKGuitarPreamp.vst3"; DestDir: "{cf64}\VST3\"; Check: Is64BitInstallMode; Components:vst3_64; Flags: ignoreversion;
 
 Source: "..\manual\GuitarPreamp_manual.pdf"; DestDir: "{app}"
 Source: "changelog.txt"; DestDir: "{app}"

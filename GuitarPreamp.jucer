@@ -70,9 +70,9 @@
     </XCODE_MAC>
     <VS2019 targetFolder="Builds/VisualStudio2019">
       <CONFIGURATIONS>
-        <CONFIGURATION isDebug="1" name="Debug" headerPath="C:\Dev\ATK-GuitarPreamp&#10;C:\Dev\AudioTK&#10;C:\Dev\AudioTK\3rdParty\gsl\include&#10;C:\Dev\AudioTK\3rdParty\eigen&#10;C:\Dev\boost_1_75_0&#10;C:\Dev\ATK-Modelling&#10;"
+        <CONFIGURATION isDebug="1" name="Debug" headerPath="C:\Dev\ATKGuitarPreamp&#10;C:\Dev\AudioTK&#10;C:\Dev\AudioTK\3rdParty\gsl\include&#10;C:\Dev\AudioTK\3rdParty\eigen&#10;C:\Dev\boost_1_75_0&#10;C:\Dev\ATK-Modelling&#10;"
                        targetName="ATKGuitarPreamp"/>
-        <CONFIGURATION isDebug="0" name="Release" headerPath="C:\Dev\ATK-GuitarPreamp&#10;C:\Dev\AudioTK&#10;C:\Dev\AudioTK\3rdParty\gsl\include&#10;C:\Dev\AudioTK\3rdParty\eigen&#10;C:\Dev\boost_1_75_0&#10;C:\Dev\ATK-Modelling&#10;"
+        <CONFIGURATION isDebug="0" name="Release" headerPath="C:\Dev\ATKGuitarPreamp&#10;C:\Dev\AudioTK&#10;C:\Dev\AudioTK\3rdParty\gsl\include&#10;C:\Dev\AudioTK\3rdParty\eigen&#10;C:\Dev\boost_1_75_0&#10;C:\Dev\ATK-Modelling&#10;"
                        targetName="ATKGuitarPreamp"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
@@ -97,9 +97,9 @@
     </VS2019>
     <VS2019 targetFolder="Builds/VisualStudio2019_32">
       <CONFIGURATIONS>
-        <CONFIGURATION isDebug="1" name="Debug" headerPath="C:\Dev\ATK-GuitarPreamp&#10;C:\Dev\AudioTK&#10;C:\Dev\AudioTK\3rdParty\gsl\include&#10;C:\Dev\AudioTK\3rdParty\eigen&#10;C:\Dev\boost_1_75_0&#10;C:\Dev\ATK-Modelling&#10;"
+        <CONFIGURATION isDebug="1" name="Debug" headerPath="C:\Dev\ATKGuitarPreamp&#10;C:\Dev\AudioTK&#10;C:\Dev\AudioTK\3rdParty\gsl\include&#10;C:\Dev\AudioTK\3rdParty\eigen&#10;C:\Dev\boost_1_75_0&#10;C:\Dev\ATK-Modelling&#10;"
                        winArchitecture="Win32" targetName="ATKGuitarPreamp"/>
-        <CONFIGURATION isDebug="0" name="Release" headerPath="C:\Dev\ATK-GuitarPreamp&#10;C:\Dev\AudioTK&#10;C:\Dev\AudioTK\3rdParty\gsl\include&#10;C:\Dev\AudioTK\3rdParty\eigen&#10;C:\Dev\boost_1_75_0&#10;C:\Dev\ATK-Modelling&#10;"
+        <CONFIGURATION isDebug="0" name="Release" headerPath="C:\Dev\ATKGuitarPreamp&#10;C:\Dev\AudioTK&#10;C:\Dev\AudioTK\3rdParty\gsl\include&#10;C:\Dev\AudioTK\3rdParty\eigen&#10;C:\Dev\boost_1_75_0&#10;C:\Dev\ATK-Modelling&#10;"
                        winArchitecture="Win32" targetName="ATKGuitarPreamp"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
