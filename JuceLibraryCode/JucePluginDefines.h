@@ -17,7 +17,7 @@
 #  define JucePlugin_Build_VST3 1
 #endif
 #ifndef JucePlugin_Build_AU
-#  define JucePlugin_Build_AU 0
+#  define JucePlugin_Build_AU 1
 #endif
 #ifndef JucePlugin_Build_AUv3
 #  define JucePlugin_Build_AUv3 1
@@ -29,7 +29,7 @@
 #  define JucePlugin_Build_AAX 0
 #endif
 #ifndef JucePlugin_Build_Standalone
-#  define JucePlugin_Build_Standalone 1
+#  define JucePlugin_Build_Standalone 0
 #endif
 #ifndef JucePlugin_Build_Unity
 #  define JucePlugin_Build_Unity 0
@@ -41,10 +41,10 @@
 #  define JucePlugin_Name "GuitarPreamp"
 #endif
 #ifndef JucePlugin_Desc
-#  define JucePlugin_Desc "GuitarPreamp"
+#  define JucePlugin_Desc ""
 #endif
 #ifndef JucePlugin_Manufacturer
-#  define JucePlugin_Manufacturer "Matthieu Brucher"
+#  define JucePlugin_Manufacturer "MatthieuBrucher"
 #endif
 #ifndef JucePlugin_ManufacturerWebsite
 #  define JucePlugin_ManufacturerWebsite "http://www.audio-tk.com/"
@@ -125,7 +125,7 @@
 #  define JucePlugin_RTASDisableMultiMono 0
 #endif
 #ifndef JucePlugin_AAXIdentifier
-#  define JucePlugin_AAXIdentifier com.MatthieuBrucher.ATKGuitarPreamp
+#  define JucePlugin_AAXIdentifier com.MatthieuBrucher.GuitarPreamp
 #endif
 #ifndef JucePlugin_AAXManufacturerCode
 #  define JucePlugin_AAXManufacturerCode JucePlugin_ManufacturerCode
@@ -149,7 +149,7 @@
 #  define JucePlugin_IAASubType JucePlugin_PluginCode
 #endif
 #ifndef JucePlugin_IAAName
-#  define JucePlugin_IAAName "Matthieu Brucher: GuitarPreamp"
+#  define JucePlugin_IAAName "MatthieuBrucher: GuitarPreamp"
 #endif
 #ifndef JucePlugin_VSTNumMidiInputs
 #  define JucePlugin_VSTNumMidiInputs 16

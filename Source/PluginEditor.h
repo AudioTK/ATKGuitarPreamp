@@ -11,9 +11,8 @@
 #include "PluginProcessor.h"
 #include <JuceHeader.h>
 
-#include <ATKJUCEComponents/EQ/ToneStackFilter.h>
-#include <ATKJUCEComponents/Tools/DryWetFilter.h>
-#include <ATKJUCEComponents/Tools/VolumeFilter.h>
+#include <ATKJUCEComponents/JUCE/ImageLookAndFeel.h>
+#include <ATKJUCEComponents/JUCE/Slider.h>
 
 //==============================================================================
 /**
@@ -34,10 +33,15 @@ private:
   ATKGuitarPreampAudioProcessor& processor;
   juce::AudioProcessorValueTreeState& paramState;
 
-  ATK::juce::VolumeFilterComponent gain;
-  ATK::juce::ToneStackFilterComponent stack;
-  ATK::juce::VolumeFilterComponent volume;
-  ATK::juce::DryWetFilterComponent drywet;
+  ATK::juce::ImageLookAndFeel knob;
+  juce::Image bckgndImage;
+
+  ATK::juce::SliderComponent gain;
+  ATK::juce::SliderComponent lowStack;
+  ATK::juce::SliderComponent midStack;
+  ATK::juce::SliderComponent highStack;
+  ATK::juce::SliderComponent volume;
+  ATK::juce::SliderComponent drywet;
 
   JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(ATKGuitarPreampAudioProcessorEditor)
 };
