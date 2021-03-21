@@ -1,6 +1,6 @@
 [Setup]
 AppName=ATKGuitarPreamp
-AppVersion=1.1
+AppVersion=2.0
 
 
 DefaultDirName={pf}\ATKGuitarPreamp
