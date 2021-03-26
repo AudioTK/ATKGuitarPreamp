@@ -38,7 +38,7 @@
  #define JucePlugin_Enable_IAA             0
 #endif
 #ifndef  JucePlugin_Name
- #define JucePlugin_Name                   "GuitarPreamp"
+ #define JucePlugin_Name                   "ATKGuitarPreamp"
 #endif
 #ifndef  JucePlugin_Desc
  #define JucePlugin_Desc                   ""
@@ -149,7 +149,7 @@
  #define JucePlugin_IAASubType             JucePlugin_PluginCode
 #endif
 #ifndef  JucePlugin_IAAName
- #define JucePlugin_IAAName                "MatthieuBrucher: GuitarPreamp"
+ #define JucePlugin_IAAName                "MatthieuBrucher: ATKGuitarPreamp"
 #endif
 #ifndef  JucePlugin_VSTNumMidiInputs
  #define JucePlugin_VSTNumMidiInputs       16
