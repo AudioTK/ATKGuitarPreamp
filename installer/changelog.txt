@@ -1,7 +1,7 @@
 ATKGuitarPreamp changelog
 http://www.audio-tk.com
 
-21/03/21 - 2.0 release
+14/09/21 - 2.0 release
   - New UI
   - built against ATK 3.3.0
   - rebuild against JUCE 6
