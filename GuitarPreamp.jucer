@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT id="KHQl4f" name="GuitarPreamp" displaySplashScreen="1" reportAppUsage="1"
+<JUCERPROJECT id="KHQl4f" name="ATKGuitarPreamp" displaySplashScreen="1" reportAppUsage="1"
               splashScreenColour="Dark" projectType="audioplug" version="2.0"
               bundleIdentifier="com.MatthieuBrucher.ATKGuitarPreamp" includeBinaryInAppConfig="1"
               buildVST="0" buildVST3="1" buildAU="1" buildAUv3="1" buildRTAS="0"
@@ -14,7 +14,7 @@
               pluginFormats="buildAU,buildAUv3,buildVST3" cppLanguageStandard="latest"
               jucerFormatVersion="1" defines="JUCE_VST3_CAN_REPLACE_VST2=0&#10;ATK_NO_FFT"
               useAppConfig="0" addUsingNamespaceToJuceHeader="0">
-  <MAINGROUP id="H9V4ut" name="GuitarPreamp">
+  <MAINGROUP id="H9V4ut" name="ATKGuitarPreamp">
     <GROUP id="{65FEA80A-F647-1916-F1CE-08CA719AE1BE}" name="Source">
       <FILE id="LX9XxX" name="PluginProcessor.cpp" compile="1" resource="0"
             file="Source/PluginProcessor.cpp"/>
